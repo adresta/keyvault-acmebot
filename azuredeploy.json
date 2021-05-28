@@ -19,6 +19,7 @@
       "type": "string",
       "allowedValues": [
         "https://acme-v02.api.letsencrypt.org/",
+        "https://acme-staging-v02.api.letsencrypt.org/directory",
         "https://api.buypass.com/acme/",
         "https://acme.zerossl.com/v2/DV90/"
       ],
