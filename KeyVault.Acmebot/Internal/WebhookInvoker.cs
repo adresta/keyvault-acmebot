@@ -29,7 +29,7 @@ namespace KeyVault.Acmebot.Internal
 
             object model;
 
-            if (_options.Webhook.Contains("hooks.slack.com"))
+            if (_options.Webhook.Contains("slack"))
             {
                 model = new
                 {
@@ -94,7 +94,7 @@ namespace KeyVault.Acmebot.Internal
 
             object model;
 
-            if (_options.Webhook.Contains("hooks.slack.com"))
+            if (_options.Webhook.Contains("slack"))
             {
                 model = new
                 {
