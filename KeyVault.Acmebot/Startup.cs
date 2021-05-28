@@ -84,6 +84,7 @@ namespace KeyVault.Acmebot
             {
                 var options = provider.GetRequiredService<IOptions<AcmebotOptions>>().Value;
                 var environment = provider.GetRequiredService<AzureEnvironment>();
+                System.Diagnostics.Debug.WriteLine(options);
 
                 if (options.Cloudflare != null)
                 {
@@ -113,6 +114,11 @@ namespace KeyVault.Acmebot
                 if (options.Route53 != null)
                 {
                     return new Route53Provider(options.Route53);
+                }
+
+                if (options.Hosttech != null)
+                {
+                    return new HosttechProvider(options.Hosttech);
                 }
 
                 if (options.TransIp != null)

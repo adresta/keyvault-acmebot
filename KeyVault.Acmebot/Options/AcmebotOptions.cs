@@ -42,6 +42,8 @@ namespace KeyVault.Acmebot.Options
 
         public GratisDnsOptions GratisDns { get; set; }
 
+        public HosttechOptions Hosttech { get; set; }
+
         public Route53Options Route53 { get; set; }
 
         public TransIpOptions TransIp { get; set; }
