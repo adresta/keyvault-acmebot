@@ -18,6 +18,7 @@ namespace KeyVault.Acmebot.Options
 
         [Url]
         public string Webhook { get; set; }
+        public string DisableSuccessWebhook { get; set; }
 
         [Required]
         public string Environment { get; set; } = "AzureCloud";

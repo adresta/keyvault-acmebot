@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Text;
@@ -28,7 +28,7 @@ namespace KeyVault.Acmebot.Internal
 
         public Task SendCompletedEventAsync(string certificateName, DateTimeOffset? expirationDate, IEnumerable<string> dnsNames)
         {
-            if (string.IsNullOrEmpty(_options.Webhook))
+            if (string.IsNullOrEmpty(_options.Webhook) || !string.IsNullOrEmpty(_options.DisableSuccessWebhook))
             {
                 return Task.CompletedTask;
             }
