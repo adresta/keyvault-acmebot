@@ -22,7 +22,7 @@ namespace KeyVault.Acmebot.Providers
         private readonly HosttechDnsClient _hosttechDnsClient;
         private readonly IdnMapping _idnMapping = new IdnMapping();
 
-        public int PropagationSeconds => 10;
+        public int PropagationSeconds => 60;
 
         public async Task<IReadOnlyList<DnsZone>> ListZonesAsync()
         {
