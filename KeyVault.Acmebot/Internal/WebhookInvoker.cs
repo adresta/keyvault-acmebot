@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Text;
@@ -79,6 +79,39 @@ namespace KeyVault.Acmebot.Internal
                     themeColor = "2EB886"
                 };
             }
+            else if (_options.Webhook.Contains("discordapp.com"))
+            {
+                model = new
+                {
+                    username = "Acmebot",
+                    content = "A new certificate has been issued.",
+                    embeds = new[]
+                    {
+                        new
+                        {
+                            color = 2644236,
+                            fields = new object[]
+                            {
+                                new
+                                {
+                                    name = "Certificate Name",
+                                    value = certificateName,
+                                },
+                                new
+                                {
+                                    name = "Expiration Date",
+                                    value = expirationDate,
+                                },
+                                new
+                                {
+                                    name = "DNS Names",
+                                    value = string.Join("\n", dnsNames)
+                                }
+                            }
+                        }
+                    }
+                };
+            }
             else
             {
                 model = new
@@ -123,6 +156,23 @@ namespace KeyVault.Acmebot.Internal
                     title = "Acmebot",
                     text = $"**{functionName}**\n\n**Reason**\n\n{reason}",
                     themeColor = "A30200"
+                };
+            }
+            if (_options.Webhook.Contains("discordapp.com"))
+            {
+                model = new
+                {
+                    username = "Acmebot",
+                    content = "Certificate creation failed",
+                    embeds = new[]
+                    {
+                        new
+                        {
+                            name = functionName,
+                            text = reason,
+                            color = 10682880 // same as A30200 in .office.com hook
+                        }
+                    }
                 };
             }
             else
