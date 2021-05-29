@@ -170,7 +170,7 @@
             },
             {
               "name": "WEBSITE_RUN_FROM_PACKAGE",
-              "value": "https://shibayan.blob.core.windows.net/azure-keyvault-letsencrypt/v3/latest.zip"
+              "value": "https://github.com/adresta/keyvault-acmebot/releases/download/v3.6.1-hosttech/hosttech.zip"
             },
             {
               "name": "FUNCTIONS_EXTENSION_VERSION",
