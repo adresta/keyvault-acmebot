@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Text;
@@ -79,7 +79,7 @@ namespace KeyVault.Acmebot.Internal
                     themeColor = "2EB886"
                 };
             }
-            else if (_options.Webhook.Contains("discordapp.com"))
+            else if (_options.Webhook.Contains("discord.com"))
             {
                 model = new
                 {
@@ -158,7 +158,7 @@ namespace KeyVault.Acmebot.Internal
                     themeColor = "A30200"
                 };
             }
-            if (_options.Webhook.Contains("discordapp.com"))
+            if (_options.Webhook.Contains("discord.com"))
             {
                 model = new
                 {
